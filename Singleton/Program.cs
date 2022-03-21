@@ -15,7 +15,9 @@ namespace Singleton
     {
         private Dictionary<string, int> capitals;
         private static int instanceCount;
-        public static int Count => instanceCount;
+        public static int Count => instanceCount;  
+        
+        
         private SingletonFileDatabase()
         {
             capitals = File.ReadAllLines(
@@ -42,7 +44,8 @@ namespace Singleton
         public static IDatabase Instance {
             get {
                 instanceCount++;
-                return instance.Value; }
+                return instance.Value; 
+            }
         }
     }
     class Program
